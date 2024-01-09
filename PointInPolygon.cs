@@ -25,10 +25,13 @@ public static class PointInPolygon
             }
         }
 
-        return false;
+        if((intersections % 2) == 0)
+        {
+            return false;
+        }
+
+        return true;
     }
-
-
     public static bool inside(Vector2 a, List<Vector2> polygon, float tolerance)
     {
         int intersections = 0;
@@ -50,6 +53,12 @@ public static class PointInPolygon
             }
         }
 
-        return false;
+        if ((intersections % 2) == 0)
+        {
+            return false;
+        }
+
+        return true;
     }
+
 }
